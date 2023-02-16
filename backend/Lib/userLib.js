@@ -11,21 +11,21 @@ module.exports.getAllUsers = async function(callback){
     
 };
 
-// module.exports.createFirstUser = async function(callback){
-//     try{
-//         var user = {
-//             username: "ashvitamajety",
-//             yearOfGraduation: 2033,
-//         };
-//         var newUser = new userModel(user);
-//         var result = await newUser.save();
-//         callback(null,result);
-//     }
-//     catch(err){
-//         callback(err,null);
-//     }
+module.exports.createFirstUser = async function(callback){
+    try{
+        var user = {
+            username: "ashvitamajety12",
+            yearOfGraduation: 2033,
+        };
+        var newUser = new userModel(user);
+        var result = await newUser.save();
+        callback(null,result);
+    }
+    catch(err){
+        callback(err,null);
+    }
     
-// };
+};
 
 // module.exports.createUser = async function(username,callback){
 //     try{
@@ -42,16 +42,19 @@ module.exports.getAllUsers = async function(callback){
 //     }
 // }
 
-module.exports.deleteUser = async function(callback){
-    try{
-        var query = {
-            userName: "harshitha12",
-            //userName: username,
-        }
-        var result = await userModel.deleteOne(query);
-        callback(null,result);
-    }
-    catch(err){
-        callback(err,null);
-    }
-}
+//delete
+// module.exports.deleteUser = async function(callback){
+//     try{
+//         var query = {
+//             userName: "harshitha12",
+//             //userName: username,
+//         }
+//         var result = await userModel.deleteOne(query);
+//         callback(null,result);
+//     }
+//     catch(err){
+//         callback(err,null);
+//     }
+// }
+
+
