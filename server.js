@@ -40,8 +40,6 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING,{},function(err){
 	else{
 	console.log("db connected");
 	//do not create user if atleast 1 user exist in table
-
-    //-----------------------------------------------------------------------------
 	userLib.createFirstUser(function(err,res){
 		if(err){
 		console.error(err);
@@ -54,8 +52,4 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING,{},function(err){
 		console.log(`Server running on http://localhost:${port}`);
 	});
 	}
-    //--------------------------------------------------------------------------------
-
-
-
 });
