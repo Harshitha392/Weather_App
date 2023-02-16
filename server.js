@@ -40,17 +40,35 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING,{},function(err){
 	else{
 	console.log("db connected");
 	//do not create user if atleast 1 user exist in table
-	userLib.createFirstUser(function(err,res){
-		if(err){
-		console.error(err);
-		}
-		else
-		console.log(res);
-	});
-	app.listen(port, function(){
+
+    //-----------------------------------------------------------------------------
+	// userLib.createFirstUser(function(err,res){
+	// 	if(err){
+	// 	console.error(err);
+	// 	}
+	// 	else
+	// 	console.log(res);
+	// });
+	// app.listen(port, function(){
+	// 	console.log("Server running on http://localhost:"+port);
+	// 	console.log(`Server running on http://localhost:${port}`);
+	// });
+	// }
+    //--------------------------------------------------------------------------------
+
+    userLib.createUser({username : "ashvita12", yearOfGraduation:2034},function(err,res){
+        if(err){
+            console.log(err);
+        }
+        else{
+            console.log(res);
+        }
+    });
+    app.listen(port, function(){
 		console.log("Server running on http://localhost:"+port);
 		console.log(`Server running on http://localhost:${port}`);
 	});
 	}
+
 
 });

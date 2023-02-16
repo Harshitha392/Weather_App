@@ -26,3 +26,18 @@ module.exports.createFirstUser = async function(callback){
     }
     
 };
+
+module.exports.createUser = async function(username,callback){
+    try{
+        var user = {
+            username : username,
+            yearOfGraduation : 2024,
+        };
+        var newUser = new userModel(user);
+        var result = await newUser.save();
+        callback(null,result);
+    }
+    catch(err){
+        callback(err,null);
+    }
+}
