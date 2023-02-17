@@ -11,21 +11,21 @@ module.exports.getAllUsers = async function(callback){
     
 };
 
-// module.exports.createFirstUser = async function(callback){
-//     try{
-//         var user = {
-//             username: "ashvitamajety12",
-//             yearOfGraduation: 2033,
-//         };
-//         var newUser = new userModel(user);
-//         var result = await newUser.save();
-//         callback(null,result);
-//     }
-//     catch(err){
-//         callback(err,null);
-//     }
+module.exports.createFirstUser = async function(callback){
+    try{
+        var user = {
+            username: "ashvita2010",
+            yearOfGraduation: 2033,
+        };
+        var newUser = new userModel(user);
+        var result = await newUser.save();
+        callback(null,result);
+    }
+    catch(err){
+        callback(err,null);
+    }
     
-// };
+};
 
 // module.exports.createUser = async function(username,callback){
 //     try{
@@ -97,12 +97,12 @@ module.exports.getAllUsers = async function(callback){
 
 // delete user by userName
 
-module.exports.deleteUserByUserName = async function(username, callback) {
-    try {
-        var query = { username: username };
-        var deletedUser = await userModel.findOneAndDelete(query);
-        callback(null, deletedUser);
-    } catch (err) {
-        callback(err, null);
-    }
-}
+// module.exports.deleteUserByUserName = async function(username, callback) {
+//     try {
+//         var query = { username: username };
+//         var deletedUser = await userModel.findOneAndDelete(query);
+//         callback(null, deletedUser);
+//     } catch (err) {
+//         callback(err, null);
+//     }
+// }
