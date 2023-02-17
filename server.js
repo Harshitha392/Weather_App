@@ -40,16 +40,60 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING,{},function(err){
 	else{
 	console.log("db connected");
 	//do not create user if atleast 1 user exist in table
-	userLib.createFirstUser(function(err,res){
-		if(err){
-		console.error(err);
-		}
-		else
-		console.log(res);
-	});
-	app.listen(port, function(){
-		console.log("Server running on http://localhost:"+port);
-		console.log(`Server running on http://localhost:${port}`);
-	});
+	// userLib.createFirstUser(function(err,res){
+	// 	if(err){
+	// 	console.error(err);
+	// 	}
+	// 	else
+	// 	console.log(res);
+	// });
+	// app.listen(port, function(){
+	// 	console.log("Server running on http://localhost:"+port);
+	// 	console.log(`Server running on http://localhost:${port}`);
+	// });
+
+        //get user by name
+        // userLib.getUserByUserName("harshitha12", function(err, res) {
+        //     if (err) {
+        //         console.error(err);
+        //     } else {
+        //         console.log("User found by userName:");
+        //         console.log(res);
+        //     }
+        // });
+
+        //update user details by name
+        // Update user by userName
+
+        var newValues = {
+            $set: {
+                yearOfGraduation: 2023,
+            }
+        };
+
+        // userLib.updateUserByUserName("harshtiha12", newValues, function(err, res) {
+        //     if (err) {
+        //         console.error(err);
+        //     } else {
+        //         console.log("User updated by userName:");
+        //         console.log(res);
+        //     }
+        // });
+
+        //delete user by userName
+
+        userLib.deleteUserByUserName("harshitha12", function(err, res) {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log("User deleted by userName:");
+                console.log(res);
+            }
+        });
+        app.listen(port, function(){
+            console.log("Server running on http://localhost:"+port);
+            console.log(`Server running on http://localhost:${port}`);
+        });
+
 	}
 });
