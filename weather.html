@@ -37,7 +37,7 @@
         <h1>What's The Weather</h1>
         <div id = "inputBox" class="input-group mb-3 mt-5">
             <input id = "searchBox" type="text" class="form-control form-control-lg" placeholder="Type a city name">
-            <button type="button" class="btn btn-outline-success" id = "button-addon2"><i class = "fas fa-search fa-lg fa-fw"></i></button>
+            <button type="button" class="btn btn-outline-success" id = "button-addon2" onclick="start()"><i class = "fas fa-search fa-lg fa-fw"></i></button>
         </div>
         <div class="card weather-card">
             <div class="card-title text-center mt-3">
@@ -95,13 +95,17 @@
             }
         });
 
-        
+        //search icon onclick function:(start())
+       function start(){
+        getWeatherReport(searchBox.value);
+       }
 
         //theme
         const themeButton = document.getElementById('button1');
         const container1 = document.getElementById("main-container");
         const x = document.getElementsByTagName("body")[0];
-        const y = document.getElementById("card-body");
+        const y = document.getElementById("weather-card");
+        const z = document.getElementById("accordionExample")
         themeButton.addEventListener('click',function onClick(){
             if(themeButton.innerText=="Dark"){
             themeButton.innerText="Light";
@@ -109,7 +113,8 @@
             themeButton.style.backgroundColor="white";
             x.style.backgroundColor="#222"
             x.style.color=" #e6e6e6";
-            y.style.backgroundColor="rgb(120,120,120)";
+            y.style.color="black";
+            y.style.backgroundColor="#222";
             }
             else{
             themeButton.innerText="Dark";
