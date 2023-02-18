@@ -40,7 +40,7 @@
             <button type="button" class="btn btn-outline-success" id = "button-addon2" onclick="start()"><i class = "fas fa-search fa-lg fa-fw"></i></button>
         </div>
         <div class="card weather-card">
-            <div class="card-title text-center mt-3">
+            <div class="card-title text-center mt-3" >
                 <h4 id = "city">Delhi</h4>
                 <h6 id = "date"> Fri (Feb) 17, 2023</h6>
             </div>
@@ -88,6 +88,7 @@
             key: "eb7a2d4a5a9b284fe54b7bb547238443",
             baseUrl: "https://api.openweathermap.org/data/2.5/weather",
         }
+        //document.getElementById("weather-card").style.display = "none"
         const searchBox = document.getElementById("searchBox");
         searchBox.addEventListener("keypress", function(event){
             if(event.keyCode == 13){
@@ -95,7 +96,6 @@
             }
         });
 
-        //search icon onclick function:(start())
        function start(){
         getWeatherReport(searchBox.value);
        }
@@ -104,8 +104,8 @@
         const themeButton = document.getElementById('button1');
         const container1 = document.getElementById("main-container");
         const x = document.getElementsByTagName("body")[0];
-        const y = document.getElementById("weather-card");
-        const z = document.getElementById("accordionExample")
+        const y = document.getElementsByTagName("h4");
+        const z = document.getElementsByTagName("h6");
         themeButton.addEventListener('click',function onClick(){
             if(themeButton.innerText=="Dark"){
             themeButton.innerText="Light";
@@ -114,7 +114,6 @@
             x.style.backgroundColor="#222"
             x.style.color=" #e6e6e6";
             y.style.color="black";
-            y.style.backgroundColor="#222";
             }
             else{
             themeButton.innerText="Dark";
