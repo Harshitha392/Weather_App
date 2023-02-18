@@ -99,7 +99,9 @@
         });
 
        function start(){
-        getWeatherReport(searchBox.value);
+        const searchcity=searchBox.value;
+        searchBox.value="";
+        getWeatherReport(searchcity);
        }
 
         //theme
