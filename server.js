@@ -1,13 +1,18 @@
-require("dotenv").config();
+// require("dotenv").config();
 // // import dotenv from "dotenv";//instead of using require
 // // dotenv.config();
-// import {config} from "dotenv";//instead of using the above methods
-// config();
-const userLib=require("./backend/Lib/userLib")
+import {config} from "dotenv";//instead of using the above methods
+config();
+//const userLib=require("./backend/Lib/userLib")
 // import userLib from "./backend/Lib/userLib.js";
-const mongoose =require("mongoose");
-const express = require('express');
+import * as userLib from "./backend/Lib/userLib.js";
+//const mongoose =require("mongoose");
+import mongoose from "mongoose";
+// const express = require('express');
+import express, {request} from "express";
 const app = express();
+
+
 const port = process.env.PORT || 5010;
 
 const options = {
