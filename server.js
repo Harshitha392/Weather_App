@@ -23,21 +23,21 @@ app.use(express.static("public",options));
 
 app.get("/", function(req, res){
 	//res.send("I am Harshitha Majety");
-	res.sendFile(__dirname+"/index.html");
+	res.sendFile(process.cwd()+"/index.html");
 });
 app.get("/resume", function(req, res){
 	//res.send("I am Harshitha Majety");
-	res.sendFile(__dirname+"/resume.html");
+	res.sendFile(process.cwd()+"/resume.html");
 });
 
 app.get("/card", function(req, res){
 	//res.send("I am Harshitha Majety");
-	res.sendFile(__dirname+"/card.html");
+	res.sendFile(process.cwd()+"/card.html");
 });
 
 app.get("/weather", function(req, res){
 	//res.send("I am Harshitha Majety");
-	res.sendFile(__dirname+"/weather.html");
+	res.sendFile(process.cwd()+"/weather.html");
 });
 
 mongoose.set('strictQuery',true);
