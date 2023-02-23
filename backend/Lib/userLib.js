@@ -1,6 +1,6 @@
-//const userModel = require("../models/userModel");
-import userModel from "../models/userModel.js"
-export  async function getAllUsers(callback){
+const userModel = require("../models/userModel");
+//import userModel from "../models/userModel.js"
+module.exports.getAllUsers = async function (callback){
     try{
         var users = await userModel.find({});
         callback(null,users);
@@ -11,7 +11,7 @@ export  async function getAllUsers(callback){
     
 };
 
-export async function createFirstUser(callback){
+module.exports.createFirstUser = async function(callback){
     try{
         var user = {
             username: "ashvita20",
